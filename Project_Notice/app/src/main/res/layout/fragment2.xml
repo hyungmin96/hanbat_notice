@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation ="vertical">
+
+    <LinearLayout
+        android:id="@+id/frg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center"
+        android:padding="7dp">
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="270dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:background="@drawable/label"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="8dp"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nanumbarungothic"
+            android:hint="검색어를 입력해주세요."
+            />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_marginLeft="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textColor="#4c4c4c"
+            android:fontFamily="@font/nanumbarungothic"
+            android:drawableStart="@drawable/search_24px"
+            android:background="#FBFBFB"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/CategoryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:text="전체공지"
+                    android:textColor="#2364B3"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints"/>
+
+                <TextView
+                    android:id="@+id/Keyword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:textColor="#EA5252"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/CategoryName"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/Page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:textColor="#EA5252"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/Keyword"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/ArticleNums"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:textColor="#EA5252"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/Page"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="30dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/horizontal_line_24px"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:layout_marginTop="40dp"
+                android:background="#EDEDED"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ArticleList"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"/>
+
+                <ImageView
+                    android:id="@+id/No_search"
+                    android:layout_gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/clear_search_126px"
+                    android:visibility="invisible"
+                    android:scaleType="center"/>
+
+                <TextView
+                    android:id="@+id/Search_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:visibility="invisible"
+                    android:textSize="24dp"
+                    android:text="검색결과가 존재하지 않습니다."/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="right|bottom"
+                    android:backgroundTint="#E8E8E8"
+                    android:src="@drawable/up_48px"
+                    android:scaleType="center"
+                    app:borderWidth="0dp"
+                    app:fabSize="normal"/>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

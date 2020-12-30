@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Project_Notice</string>
+
+    <string-array name="mid_names">
+        <item>30분</item>
+        <item>2시간</item>
+        <item>4시간</item>
+        <item>8시간</item>
+    </string-array>
+
+</resources>
